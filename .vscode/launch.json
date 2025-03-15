@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload"
+            ],
+            "jinja": true,
+            "env": {
+                "PYTHONPATH": "./src:/scripts"
+            },
+        },
+        {
+            "name": "Python: pytest",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "PYTHONPATH": "./src:./scripts"
+            },
+            "console": "integratedTerminal"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+---
+extends: default
+
+rules:
+    new-lines:
+        type: platform  # use the newline settings of the platform run on
