@@ -1,0 +1,29 @@
+---
+name: Basic CI for fastapi_template
+run-name: ${{github.actor}} is testing their change of fastapi_template
+on: [push]  # yamllint disable-line rule:truthy
+jobs:
+    validate_changes:
+        runs-on: ubuntu-latest
+        steps:
+            # begin setup
+            - name: check out code
+              uses: actions/checkout@v4
+            - name: install uv
+              uses: astral-sh/setup-uv@v5
+              with:
+                  version: "0.5.26"
+            - name: set up python
+              uses: actions/setup-python@v5
+            - name: install dependencies and boot venv
+              run: |
+                  uv sync --all-extras --dev
+                  source .venv/bin/activate
+                  echo PATH=$PATH >> $GITHUB_ENV
+            # end setup
+            - name: just format
+              run: just format
+            - name: just lint
+              run: just lint
+            - name: just test
+              run: just test

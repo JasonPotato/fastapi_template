@@ -1,0 +1,10 @@
+{
+    "python.testing.pytestArgs": [
+        "-vv",
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.extraPaths": ["./src", "./scripts"]
+}
