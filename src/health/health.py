@@ -16,10 +16,12 @@ class Health(BaseModel):
 router = APIRouter(tags=["health"])
 
 
-def get_routers() -> Tuple[APIRouter, List[str]]:
+def get_routers() -> List[Tuple[APIRouter, List[str]]]:
     """return a tuple of the routers this api provides and the versions it maps to"""
     routers = constants.LATEST_API_PREFIXES
-    return router, routers
+    return [
+        (router, routers),
+    ]
 
 
 @router.get("/health", response_model=Health)

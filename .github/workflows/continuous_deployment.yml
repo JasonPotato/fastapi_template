@@ -22,7 +22,7 @@ jobs:
                   echo PATH=$PATH >> $GITHUB_ENV
             # end setup
             - name: just format
-              run: just format
+              run: just fail_on_format_diff="true" format
             - name: just lint
               run: just lint
             - name: just test
