@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0">
+        <title>Dead Drop: One-Time Secret Sharing</title>
+        <script src="https://unpkg.com/htmx.org@2.0.0"
+                integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+                crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet"
+              href="https://cdn.simplecss.org/simple.min.css">
+    </head>
+    <body>
+        <h1>Dead Drop</h1>
+        <p>Here is your secret value. It can only be read once!</p>
+
+        <form>
+            <input type="text"
+                   value="{{secret_value}}"
+                   readonly>
+        </form>
+    </body>
+</html>

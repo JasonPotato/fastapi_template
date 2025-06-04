@@ -27,6 +27,7 @@ dev = [
 pythonpath = [
     "./src",
     "./scripts",
+    "./tests"
 ]
 addopts="--cov --cov-report html --cov-report term-missing --cov-fail-under 80"
 

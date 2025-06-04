@@ -5,8 +5,12 @@ import logging
 import toml
 from fastapi import APIRouter, FastAPI
 
+from fastapi.staticfiles import StaticFiles
+
 from dep_injection_example import dep_injection_example
+from frontend import frontend
 from health import health
+from secret import secret
 
 
 def configure_logger():
@@ -21,12 +25,13 @@ def configure_logger():
         logging.getLogger().setLevel(logging.WARNING)
 
 
-def add_route_to_api(api_app: FastAPI, routes: Tuple[APIRouter, List[str]]):
+def add_route_to_api(api_app: FastAPI, routes: List[Tuple[APIRouter, List[str]]]):
     """add a new route to the api"""
-    router, endpoints = routes
-    for endpoint in endpoints:
-        print(endpoint)
-        api_app.include_router(router, prefix=endpoint)
+    for route in routes:
+        router, endpoints = route
+        for endpoint in endpoints:
+            print(endpoint)
+            api_app.include_router(router, prefix=endpoint)
 
 
 def get_project_info_from_pyproject() -> Tuple[str, str]:
@@ -44,7 +49,12 @@ def create_app():
 
     add_route_to_api(application, health.get_routers())
     add_route_to_api(application, dep_injection_example.get_routers())
+    add_route_to_api(application, secret.get_routers())
+    add_route_to_api(application, frontend.get_routers())
 
+    application.mount(
+        "/static", StaticFiles(directory="frontend/static"), name="static"
+    )
     return application
 
 

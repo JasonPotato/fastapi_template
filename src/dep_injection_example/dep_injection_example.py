@@ -8,7 +8,7 @@ from utilities import constants
 
 
 class DependencyInjectionExample(BaseModel):
-    """Model describing the health of the service"""
+    """Model showing how to do dependency injection"""
 
     message: str
 
@@ -16,10 +16,10 @@ class DependencyInjectionExample(BaseModel):
 router = APIRouter(tags=["dependency-injection-example"])
 
 
-def get_routers() -> Tuple[APIRouter, List[str]]:
+def get_routers() -> List[Tuple[APIRouter, List[str]]]:
     """return a tuple of the routers this api provides and the versions it maps to"""
     routers = constants.LATEST_API_PREFIXES
-    return router, routers
+    return [(router, routers)]
 
 
 def get_message_to_send(message_to_return: int) -> str:
