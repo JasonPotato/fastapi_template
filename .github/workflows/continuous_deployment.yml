@@ -3,7 +3,7 @@ name: Basic CI for fastapi_template
 run-name: ${{github.actor}} is testing their change of fastapi_template
 on: [push]  # yamllint disable-line rule:truthy
 jobs:
-    validate_changes:
+    just_format:
         runs-on: ubuntu-latest
         steps:
             # begin setup
@@ -23,7 +23,63 @@ jobs:
             # end setup
             - name: just format
               run: just fail_on_format_diff="true" format
+    just_lint:
+        runs-on: ubuntu-latest
+        steps:
+            # begin setup
+            - name: check out code
+              uses: actions/checkout@v4
+            - name: install uv
+              uses: astral-sh/setup-uv@v5
+              with:
+                  version: "0.5.26"
+            - name: set up python
+              uses: actions/setup-python@v5
+            - name: install dependencies and boot venv
+              run: |
+                  uv sync --all-extras --dev
+                  source .venv/bin/activate
+                  echo PATH=$PATH >> $GITHUB_ENV
+            # end setup
             - name: just lint
               run: just lint
+    just_test:
+        runs-on: ubuntu-latest
+        steps:
+            # begin setup
+            - name: check out code
+              uses: actions/checkout@v4
+            - name: install uv
+              uses: astral-sh/setup-uv@v5
+              with:
+                  version: "0.5.26"
+            - name: set up python
+              uses: actions/setup-python@v5
+            - name: install dependencies and boot venv
+              run: |
+                  uv sync --all-extras --dev
+                  source .venv/bin/activate
+                  echo PATH=$PATH >> $GITHUB_ENV
+            # end setup
             - name: just test
               run: just test
+    just_package:
+        runs-on: ubuntu-latest
+        steps:
+            # begin setup
+            - name: check out code
+              uses: actions/checkout@v4
+            - name: install uv
+              uses: astral-sh/setup-uv@v5
+              with:
+                  version: "0.5.26"
+            - name: set up python
+              uses: actions/setup-python@v5
+            - name: install dependencies and boot venv
+              run: |
+                  uv sync --all-extras --dev
+                  source .venv/bin/activate
+                  echo PATH=$PATH >> $GITHUB_ENV
+            # end setup
+            - name: just package
+              run: just package
