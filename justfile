@@ -6,8 +6,6 @@ format_checks := if fail_on_format_diff =="true" { "--check --diff" } else { "" 
 python_source := "./app/ ./src/ ./tests/ ./scripts/"
 pythonpath_value := "./app/:./src/:./scripts/"
 
-yaml_source := ".yamllint ./.github/workflows/"
-
 service_ip := "localhost"
 service_port := "8000"
 
@@ -42,7 +40,7 @@ pyright:
     @PYTHONPATH={{pythonpath_value}} uv run pyright {{python_source}}
 
 yamllint:
-    @uv run yamllint {{yaml_source}}
+    @uv run yamllint .
 
 dockerlint:
     @uv run hadolint Dockerfile
