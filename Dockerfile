@@ -1,9 +1,9 @@
 FROM ghcr.io/astral-sh/uv:python3.10-alpine
 
-ARG APP_USER=loaderservice
-ARG APP_GROUP=servicegroup
+ARG APP_USER=template_service
+ARG APP_GROUP=template_service_group
 ARG HOME_DIR=/home/${APP_USER}
-ARG DEPLOY_DIR=${HOME_DIR}/servicegroup
+ARG DEPLOY_DIR=${HOME_DIR}/deploy
 
 ENV SERVICE_PORT=8000
 
@@ -23,11 +23,11 @@ ENV PATH=".venv/bin:$PATH"
 
 # copy project source into container
 COPY ./src/ ./src/
-COPY ./scripts/ ./scripts/
-COPY ./util/health_check.py ./util/health_check.py
-COPY ./util/pyproject_parser.py ./util/pyproject_parser.py
+COPY ./app/ ./app/
+COPY ./scripts/health_check.py ./scripts/health_check.py
+COPY ./scripts/pyproject_parser.py ./scripts/pyproject_parser.py
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD uv run util/health_check.py --port ${SERVICE_PORT}
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD uv run scripts/health_check.py --port ${SERVICE_PORT}
 
 # reset entrypoing, don't invoke `uv`
 ENTRYPOINT [ ]

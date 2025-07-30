@@ -3,20 +3,20 @@ default: check run
 fail_on_format_diff := "false"
 format_checks := if fail_on_format_diff =="true" { "--check --diff" } else { "" }
 
-python_source := "./src/ ./tests/ ./scripts/ ./util/"
-pythonpath_value := "./src/:./scripts/"
+python_source := "./app/ ./src/ ./tests/ ./scripts/"
+pythonpath_value := "./app/:./src/:./scripts/"
 
 yaml_source := ".yamllint ./.github/workflows/"
 
 service_ip := "localhost"
 service_port := "8000"
 
-image_name := `uv run util/pyproject_parser.py name`
-image_version := "v"+`uv run util/pyproject_parser.py version`
+image_name := `uv run scripts/pyproject_parser.py name`
+image_version := "v"+`uv run scripts/pyproject_parser.py version`
 container_name:= 'template_app'
 
 run:
-    @PYTHONPATH={{pythonpath_value}} uv run --no-dev fastapi dev scripts/main.py --proxy-headers --host {{service_ip}} --port {{service_port}}
+    @PYTHONPATH={{pythonpath_value}} uv run --no-dev fastapi dev app/main.py --proxy-headers --host {{service_ip}} --port {{service_port}}
 
 stopdocker:
     @docker rm -f {{container_name}} 2>/dev/null 1>/dev/null
