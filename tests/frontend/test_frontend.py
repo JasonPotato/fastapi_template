@@ -38,9 +38,6 @@ def test_get_secret_value_set_from_frontend_context():
     )
     assert response.status_code == 200
     secret_uuid_matches = re.search(f"get-secret/({regexes.UUID_REGEX})", response.text)
-    print(f"get-secret/({regexes.UUID_REGEX})")
-    print(response.text)
-    print(secret_uuid_matches)
     assert secret_uuid_matches is not None
     secret_uuid = secret_uuid_matches.group(1)
 

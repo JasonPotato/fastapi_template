@@ -30,7 +30,6 @@ def add_route_to_api(api_app: FastAPI, routes: List[Tuple[APIRouter, List[str]]]
     for route in routes:
         router, endpoints = route
         for endpoint in endpoints:
-            print(endpoint)
             api_app.include_router(router, prefix=endpoint)
 
 
