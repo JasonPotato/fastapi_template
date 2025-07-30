@@ -40,11 +40,13 @@ This project uses [FastAPI](https://fastapi.tiangolo.com) as its webserver. The 
 
 - .github
     - This project uses GitHub Actions to do its CI/CD. Workflows are defined here.
-- scripts/
+- app/
     - Contains application entrypoints. FastAPI main is located here.
+- frontend/
+    - Contains static files and jinja templates for a browser frontend
+- scripts/
+        - Utilities scripts and tools to make use of this easier.
 - src/
     - Contains the majority of the source that drives the application.
 - tests/
     - Contains tests that exercise the boundaries of the application. Defines and defends the API and expectations around its behavior.
-- util/
-    - Utilities scripts and tools to make use of this easier.
