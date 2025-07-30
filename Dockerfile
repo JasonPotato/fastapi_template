@@ -1,7 +1,7 @@
 FROM ghcr.io/astral-sh/uv:python3.10-alpine
 
-ARG APP_USER=template_service
-ARG APP_GROUP=template_service_group
+ARG APP_USER=templateservice
+ARG APP_GROUP=templateservicegroup
 ARG HOME_DIR=/home/${APP_USER}
 ARG DEPLOY_DIR=${HOME_DIR}/deploy
 
@@ -22,14 +22,15 @@ RUN uv sync --frozen --no-install-project --no-dev
 ENV PATH=".venv/bin:$PATH"
 
 # copy project source into container
-COPY ./src/ ./src/
 COPY ./app/ ./app/
+COPY ./frontend/ ./frontend/
+COPY ./src/ ./src/
 COPY ./scripts/health_check.py ./scripts/health_check.py
 COPY ./scripts/pyproject_parser.py ./scripts/pyproject_parser.py
 
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD uv run scripts/health_check.py --port ${SERVICE_PORT}
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD uv run ./scripts/health_check.py --port ${SERVICE_PORT}
 
 # reset entrypoing, don't invoke `uv`
 ENTRYPOINT [ ]
 
-CMD ["/bin/sh", "-c", "just --set service_ip 0.0.0.0 run"]
+CMD ["/bin/sh", "-c", "just --set service_ip 0.0.0.0 --set fastapi_run_mode run run"]
