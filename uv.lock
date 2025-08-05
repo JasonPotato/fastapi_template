@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10"
 resolution-markers = [
     "python_full_version >= '3.12'",
@@ -1228,13 +1228,13 @@ wheels = [
 
 [[package]]
 name = "yamllint"
-version = "1.36.1"
+version = "1.37.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pathspec" },
     { name = "pyyaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/d8/1e/f08445d56c0d32551c9c7e8324888446ccc49ac021ca3b136ab384cef35a/yamllint-1.36.1.tar.gz", hash = "sha256:a287689daaafc301a80549b2d0170452ebfdcabd826e3fe3b4c66e322d4851fa", size = 56810, upload-time = "2025-03-15T17:25:06.826Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/46/f2/cd8b7584a48ee83f0bc94f8a32fea38734cefcdc6f7324c4d3bfc699457b/yamllint-1.37.1.tar.gz", hash = "sha256:81f7c0c5559becc8049470d86046b36e96113637bcbe4753ecef06977c00245d", size = 141613, upload-time = "2025-05-04T08:25:54.355Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ca/7e/e057b7deb3843625e235c976650f8ac93cae42326d9b03aed034b46b36ae/yamllint-1.36.1-py3-none-any.whl", hash = "sha256:3e2ccd47ea12449837adf6b2c56fd9e31172ce42bc1470380806be461f25df66", size = 67049, upload-time = "2025-03-15T17:25:05.269Z" },
+    { url = "https://files.pythonhosted.org/packages/dd/b9/be7a4cfdf47e03785f657f94daea8123e838d817be76c684298305bd789f/yamllint-1.37.1-py3-none-any.whl", hash = "sha256:364f0d79e81409f591e323725e6a9f4504c8699ddf2d7263d8d2b539cd66a583", size = 68813, upload-time = "2025-05-04T08:25:52.552Z" },
 ]
