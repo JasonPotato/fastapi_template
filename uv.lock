@@ -409,14 +409,14 @@ wheels = [
 
 [[package]]
 name = "hadolint-coatl"
-version = "2.12.0.3"
+version = "2.14.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/88/f3/01927c73e850f5bf7bb3fea1d533f49d6943daa1b338103e1491d709f21d/hadolint_coatl-2.12.0.3.tar.gz", hash = "sha256:a5e7c5f7bebcbded8996daa79725c2aa6e4da019e1eaeab5612e46a01dabe3d5", size = 3224, upload-time = "2024-04-25T05:28:36.185Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/32/c6/1a87c21a3b77b5a3313e82bce08855cc73b43ae13774cba4a601e4b2dc62/hadolint_coatl-2.14.0.tar.gz", hash = "sha256:57f127ad766c5b029f82d4d71b1f652a1448d531da77a75b726c72772cfed872", size = 3282, upload-time = "2025-09-22T15:58:21.672Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5a/f7/d5848040871bbd3fbcdbedf2ec1b4467a41c82d836e21e8336624d2ffafd/hadolint_coatl-2.12.0.3-py3-none-macosx_10_9_x86_64.whl", hash = "sha256:6cd066eda976e01f8fb68da1b18f4fe5ab17e9b288ef5d57ea728623bedae6eb", size = 2622078, upload-time = "2024-04-25T05:28:26.429Z" },
-    { url = "https://files.pythonhosted.org/packages/ab/8b/bd445e5d1f401a10d1797484cc2200d9fb0057d9eedd929bc5f7415f2cb2/hadolint_coatl-2.12.0.3-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:efaaaace6ffc1c832753b49a823822988c46abcfe165e9385f8391d7798a1327", size = 5291190, upload-time = "2024-04-25T05:28:29.533Z" },
-    { url = "https://files.pythonhosted.org/packages/78/0e/4cde89404be69bfe9719abb9b8d5efcb3e7d7fbd04d2705c4de8f3e56926/hadolint_coatl-2.12.0.3-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d3280854ca28c39311103d434dad90b99a37a8bab38a5d8ec863a4d4c2e783b9", size = 2376727, upload-time = "2024-04-25T05:28:32.464Z" },
-    { url = "https://files.pythonhosted.org/packages/49/cc/c298a78d9036a94b4357d444dd7d691fd98c3a9778f5cdb54b573184b58f/hadolint_coatl-2.12.0.3-py3-none-win_amd64.whl", hash = "sha256:fccf31c8b72b01e6069625e382a3507e6f33aca2d7cda89dd971b7514c19a4d7", size = 7163286, upload-time = "2024-04-25T05:28:34.426Z" },
+    { url = "https://files.pythonhosted.org/packages/2e/0e/65e2fb5a8a8fa75c9487c455cb8201c6d6d75ac25babc2d57d7565328103/hadolint_coatl-2.14.0-py3-none-macosx_14_0_arm64.whl", hash = "sha256:1e3b19cdd026af4aa41759b4dccc18381530f891ba964dfc8817e426553cddb2", size = 20992157, upload-time = "2025-09-22T15:58:11.391Z" },
+    { url = "https://files.pythonhosted.org/packages/6d/77/e9752441730beddb173c22ea46fa28d1c170cc3a81ccc06ee3d1398aa4e7/hadolint_coatl-2.14.0-py3-none-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:44d7366d6386e2652bb5b261e7c6353ab2b8ce20d84bf101a31561934ee83735", size = 11942074, upload-time = "2025-09-22T15:58:14.053Z" },
+    { url = "https://files.pythonhosted.org/packages/9c/dc/c6f4f47fcc5939c37fa39c98acccd268afcbe5a5a6cd9e577f32896b0b4d/hadolint_coatl-2.14.0-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:a8d5e941cd5163acd95ab6ebc714b1a73822cd59f2e72c8af80b6022fbf71977", size = 12843045, upload-time = "2025-09-22T15:58:16.637Z" },
+    { url = "https://files.pythonhosted.org/packages/89/a8/fc9d508a954eedb3e43f9ddbd326f55b790d621b71f8780683d0c33d66cf/hadolint_coatl-2.14.0-py3-none-win_amd64.whl", hash = "sha256:44dd008197aa589d0306f6fa42111e904307e243a1f03ba5cf5b6f830b4541dd", size = 15239608, upload-time = "2025-09-22T15:58:18.754Z" },
 ]
 
 [[package]]
